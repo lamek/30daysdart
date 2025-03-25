@@ -1,11 +1,11 @@
 export default {
-	title: "Eleventy Base Blog v9",
-	url: "https://example.com/",
+	title: "30 Days of Dart",
+	url: "https://lamek.github.io/30daysdart/",
 	language: "en",
-	description: "I am writing about my experiences as a naval navel-gazer.",
+	description: "Copy of Leetcodes 30 Days of JS, but for Dart",
 	author: {
-		name: "Your Name Here",
-		email: "youremailaddress@example.com",
-		url: "https://example.com/about-me/"
+		name: "Kevin Lamenzo",
+		email: "kevin.lamenzo@gmail.com",
+		url: "https://lamek.github.io/30daysdart/"
 	}
 }
