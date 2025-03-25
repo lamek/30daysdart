@@ -1,12 +1,11 @@
 ---
 title: Create Hello World Function
-description: This is a post on My Blog about agile frameworks.
+description: Create a simple hello world function with Dart.
 date: 2025-03-25
 tags: closures
 ---
 
-
-This is a walkthrough of LeetCode's "Create Hello World Function" from the [30 Days of JavaScript]()
+This is a walkthrough of LeetCode's "Create Hello World Function" from the [30 Days of JavaScript](https://leetcode.com/studyplan/30-days-of-javascript/)
 path. This version is for dart.
 
 ## Problem
