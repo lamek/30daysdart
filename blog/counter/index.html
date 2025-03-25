@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Create Hello World Function</title>
-		<meta name="description" content="Create a simple hello world function with Dart.">
+		<title>Counter</title>
+		<meta name="description" content="Return a counter function">
 		<link rel="alternate" href="/30daysdart/feed/feed.xml" type="application/atom+xml" title="30 Days of Dart">
 		
 		<style>/**
@@ -474,47 +474,50 @@ header {
 		<main id="skip">
 			<heading-anchors>
 				
-<h1 id="create-hello-world-function">Create Hello World Function</h1>
+<h1 id="counter">Counter</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-03-25">25 March 2025</time></li>
 	<li><a href="/30daysdart/tags/closures/" class="post-tag">closures</a></li>
 </ul>
 
-<p>This is a walkthrough of LeetCode's &quot;Create Hello World Function&quot; from the <a href="https://leetcode.com/studyplan/30-days-of-javascript/">30 Days of JavaScript</a>
+<p>This problem is from LeetCode's <a href="https://leetcode.com/studyplan/30-days-of-javascript/">30 Days of JavaScript</a>
 path. This version is for dart.</p>
 <h2 id="problem">Problem</h2>
 <p>Description of problem</p>
 <h2 id="solution">Solution</h2>
 <pre class="language-dart" tabindex="0"><code class="language-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">dynamic</span> <span class="token function">createHelloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Hello World"</span></span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token comment">// Example 1 Test</span>
+  int n1 <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token class-name">Counter</span> counter1 <span class="token operator">=</span> <span class="token function">createCounter</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Example 1 tests passed'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token comment">// Test cases</span>
-  bool <span class="token function">runTest</span><span class="token punctuation">(</span><span class="token keyword">dynamic</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> testFunction<span class="token punctuation">,</span> <span class="token class-name">String</span> expectedOutput<span class="token punctuation">,</span> <span class="token class-name">String</span> testName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">testFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">testName</span></span><span class="token string">: Expected '</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">expectedOutput</span></span><span class="token string">', Got '</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">result</span></span><span class="token string">'"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> result <span class="token operator">==</span> expectedOutput<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token comment">// Example 2 Test</span>
+  int n2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token class-name">Counter</span> counter2 <span class="token operator">=</span> <span class="token function">createCounter</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token function">counter2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Example 2 tests passed'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">var</span> f1 <span class="token operator">=</span> <span class="token function">createHelloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  bool test1Passed <span class="token operator">=</span> <span class="token function">runTest</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hello World"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Test Case 1"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'All tests passed successfully!'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-  <span class="token keyword">var</span> f2 <span class="token operator">=</span> <span class="token function">createHelloWorld</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  bool test2Passed <span class="token operator">=</span> <span class="token function">runTest</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Hello World"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Test Case 2"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token class-name">Counter</span> <span class="token operator">=</span> int <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token comment">// Check if all tests passed</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>test1Passed <span class="token operator">&amp;&amp;</span> test2Passed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"\n🎉 All tests passed successfully! 🎉"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"\n❌ Some tests failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+<span class="token class-name">Counter</span> <span class="token function">createCounter</span><span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  int currentCount <span class="token operator">=</span> n<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    int valueToReturn <span class="token operator">=</span> currentCount<span class="token punctuation">;</span>
+    currentCount<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> valueToReturn<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/30daysdart/blog/counter/">Counter</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/30daysdart/blog/fourthpost/">This is my fourth post</a></li><li class="links-nextprev-next">Next →<br><a href="/30daysdart/blog/create-hello-world-function/">Create Hello World Function</a></li>
 </ul>
 
 			</heading-anchors>
@@ -524,7 +527,7 @@ path. This version is for dart.</p>
 			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
 		</footer>
 
-		<!-- This page `/blog/create-hello-world-function/` was built on 2025-03-25T16:31:16.114Z -->
+		<!-- This page `/blog/counter/` was built on 2025-03-25T16:31:16.114Z -->
 		<script type="module" src="/30daysdart/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
